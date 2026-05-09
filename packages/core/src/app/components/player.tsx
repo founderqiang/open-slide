@@ -272,7 +272,8 @@ export function Player({
       ref={setRoot}
       className={cn(
         'relative flex h-dvh w-screen items-center justify-center bg-black',
-        hideCursor && 'cursor-none',
+        controls && 'select-none',
+        controls && (hideCursor ? 'cursor-none' : 'cursor-default'),
       )}
     >
       <SlideCanvas flat design={design}>
@@ -284,14 +285,14 @@ export function Player({
         aria-label="Previous page"
         onClick={goPrev}
         disabled={!canPrev}
-        className="absolute inset-y-0 left-0 z-10 w-[30%]"
+        className={cn('absolute inset-y-0 left-0 z-10 w-[30%]', hideCursor && 'cursor-none')}
       />
       <button
         type="button"
         aria-label="Next page"
         onClick={goNext}
         disabled={!canNext}
-        className="absolute inset-y-0 right-0 z-10 w-[30%]"
+        className={cn('absolute inset-y-0 right-0 z-10 w-[30%]', hideCursor && 'cursor-none')}
       />
 
       {controls && (
