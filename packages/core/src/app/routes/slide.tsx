@@ -37,6 +37,7 @@ import { SlideCanvas } from '../components/slide-canvas';
 import { type ThumbnailActions, ThumbnailRail } from '../components/thumbnail-rail';
 import { exportSlideAsHtml } from '../lib/export-html';
 import { exportSlideAsPdf } from '../lib/export-pdf';
+import { remapNotesSessionCacheAfterReorder } from '../lib/inspector/use-notes';
 import type { SlideModule } from '../lib/sdk';
 import { loadSlide } from '../lib/slides';
 
@@ -120,6 +121,8 @@ export function Slide() {
       const [movedIdx] = order.splice(from, 1);
       order.splice(to, 0, movedIdx);
 
+      remapNotesSessionCacheAfterReorder(slideId, order);
+
       // Keep the user looking at the same page they were on before the drag.
       let nextIndex = index;
       if (index === from) nextIndex = to;
@@ -139,6 +142,8 @@ export function Slide() {
         }
       } catch (err) {
         setPages(before);
+        const inverse = order.map((_, i) => order.indexOf(i));
+        remapNotesSessionCacheAfterReorder(slideId, inverse);
         toast.error(`Reorder failed: ${String((err as Error).message ?? err)}`);
       }
     },
