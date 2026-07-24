@@ -1,5 +1,11 @@
 # @open-slide/core
 
+## 1.17.2
+
+### Patch Changes
+
+- [#354](https://github.com/1weiho/open-slide/pull/354) [`3380558`](https://github.com/1weiho/open-slide/commit/3380558fb1c157ccbcbbeface024ea7b122dff31) Thanks [@1weiho](https://github.com/1weiho)! - Add a Playwright e2e suite covering the viewer, present mode, presenter sync, inspector editing, dev API, and static builds.
+
 ## 1.17.1
 
 ### Patch Changes
