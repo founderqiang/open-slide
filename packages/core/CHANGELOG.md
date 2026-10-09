@@ -1,5 +1,15 @@
 # @open-slide/core
 
+## 2.0.2
+
+### Patch Changes
+
+- [#544](https://github.com/open-slide/open-slide/pull/544) [`b2bd016`](https://github.com/open-slide/open-slide/commit/b2bd016efe147d1dd518c2d40989a78b797c4062) Thanks [@1weiho](https://github.com/1weiho)! - Keep slide toolbar titles and actions accessible in narrow windows.
+
+- [#539](https://github.com/open-slide/open-slide/pull/539) [`ad82b89`](https://github.com/open-slide/open-slide/commit/ad82b8966793a90113e7d69988f6dc354bfec421) Thanks [@stantheman0128](https://github.com/stantheman0128)! - Duplicating a slide no longer creates a second folder whose name differs only by letter case.
+
+- [#522](https://github.com/open-slide/open-slide/pull/522) [`abafe9e`](https://github.com/open-slide/open-slide/commit/abafe9ead0807fcd2149a4e70f734eeb41734fa9) Thanks [@1weiho](https://github.com/1weiho)! - Undo and redo now jump back to the page where the edit was made and select the changed element, and the undo/redo buttons show their keyboard shortcuts.
+
 ## 2.0.1
 
 ### Patch Changes
